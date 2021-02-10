@@ -58,6 +58,18 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Belotte())),
             ),
+            GestureDetector(
+              child: Card(
+                color: Colors.black,
+                child: Container(
+                  height: 50.0,
+                  child: Center(
+                    child: Text("Belotte", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold ,color: Colors.white),),
+                  ),
+                ),
+              ),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Belotte())),
+            ),
           ],
         ),
       ),
