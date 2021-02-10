@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cards/pages/belotte.dart';
 
-void main() => SystemChrome.setEnabledSystemUIOverlays([])
-    .then((_) => SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
-    .then((_) => runApp(MyApp())));
+void main()//=> SystemChrome.setEnabledSystemUIOverlays([])
+    //.then((_)
+//=> SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+    //.then((_)
+ => runApp(MyApp())
+// )
+//)
+;
 
 class MyApp extends StatelessWidget {
   @override
@@ -21,8 +26,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
+  MyHomePage({Key key, this.title}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -33,6 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Title'
+        ),
+      ),
       drawer: Drawer(
         child: ListView(
           children: [
@@ -47,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => Belotte())),
-            )
+            ),
           ],
         ),
       ),
@@ -58,6 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Icon(Icons.arrow_left),
             Text(
               "Choisis ton jeu dans le menu latéral",
+            ),
+            Container(
+              width: 300.0,
+              height: 500.0,
+              child: Image.asset(
+                "assets/images/poker-omaha-110-screenshot-1507899251.jpg",
+                fit: BoxFit.cover,
+              ),
             ),
           ],
         ),
